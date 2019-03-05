@@ -9,7 +9,7 @@ namespace Polly.LightInject
     {
         public object Invoke(IInvocationInfo invocationInfo)
         {
-            var retryableAttribute = invocationInfo.Method.GetCustomAttributes(typeof(RetryableAttribute), true).FirstOrDefault() as RetryableAttribute;
+            var retryableAttribute = invocationInfo.TargetMethod.GetCustomAttributes(typeof(RetryableAttribute), true).FirstOrDefault() as RetryableAttribute;
             if (retryableAttribute != null)
             {
                 var policy = Policy
