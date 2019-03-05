@@ -21,7 +21,7 @@ public interface IFoo
 
 public class Foo : IFoo
 {
-    [Retryable(3,1000,2,typeof(ArgumentException), typeof(ArgumentException))]
+    [Retryable(3,1000,2,typeof(ArgumentException), typeof(ArgumentNullException))]
     public int GetInt()
     {
         return 1;
